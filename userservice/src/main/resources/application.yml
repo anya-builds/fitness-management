@@ -1,12 +1,15 @@
 spring:
   application:
     name: userservice
+
   datasource:
-    url : jdbc:postgres://localhost:5432/fitness-micro-user
-    username : postgres
-    password : Ashish@853
+    url: jdbc:postgresql://localhost:5432/fitness-micro-user
+    username: postgres
+    password: Ashish@853
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
