@@ -12,6 +12,11 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private final UserRepository repository;
     public UserResponse register(RegisterRequest request) {
+
+        if (repository.existsByEmail(request.getEmail())){
+
+        }
+
         User user = new User();
         user.setEmail(request.getEmail());
         user.setFirstName(request.getFirstName());
@@ -27,5 +32,6 @@ public class UserService {
         userResponse.setLastName(savedUser.getLastName());
         userResponse.setCreatedAt(savedUser.getCreatedAt());
         userResponse.setUpdatedAt(savedUser.getUpdatedAt());
+        return userResponse;
     }
 }
