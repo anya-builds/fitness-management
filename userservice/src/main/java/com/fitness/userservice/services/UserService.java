@@ -23,7 +23,7 @@ public class UserService {
         user.setLastName(request.getLastName());
         user.setPassword(request.getPassword());
 
-        User savedUser = new User();
+        User savedUser = repository.save(user);
         UserResponse userResponse = new UserResponse();
         userResponse.setId(savedUser.getId());
         userResponse.setPassword(savedUser.getPassword());
